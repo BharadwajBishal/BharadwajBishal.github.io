@@ -273,6 +273,61 @@
     .social-link:hover { border-color: var(--accent); color: var(--accent); background: #f0f9f4; }
     .social-link span { font-size: 1rem; }
 
+    /* IMPACT STORIES */
+    .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+    .impact-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 0.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .impact-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+    .impact-source {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 3px;
+      width: fit-content;
+    }
+    .source-guardian { background: #f2faf5; color: #005689; border: 1px solid #cce5d0; }
+    .source-lse { background: #f0f4ff; color: #1a3a6b; border: 1px solid #c5d3ee; }
+    .source-conversation { background: #fff7f0; color: #c4622d; border: 1px solid #f0d5c0; }
+    .impact-card h3 { font-size: 0.9rem; font-weight: 600; line-height: 1.5; color: var(--text); }
+    .impact-card p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; flex: 1; }
+    .impact-link {
+      font-size: 0.78rem;
+      color: var(--accent2);
+      font-family: var(--mono);
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .impact-link::after { content: '→'; }
+
+    /* NETWORKS */
+    .networks-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .network-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent2);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column; gap: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .network-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); border-left-color: var(--accent); }
+    .network-acronym { font-family: var(--mono); font-size: 1.1rem; font-weight: 700; color: var(--accent2); }
+    .network-name { font-size: 0.88rem; font-weight: 600; color: var(--text); }
+    .network-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+    .network-role { font-size: 0.72rem; font-family: var(--mono); color: var(--accent); letter-spacing: 0.06em; margin-top: 0.25rem; }
+
     /* FOOTER */
     footer {
       text-align: center;
@@ -292,7 +347,7 @@
       .hero { padding: 7rem 1.5rem 3rem; }
       .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
       section { padding: 3rem 1.5rem; }
-      .about-grid, .research-areas, .contact-grid { grid-template-columns: 1fr; }
+      .about-grid, .research-areas, .contact-grid, .impact-grid, .networks-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .divider { margin: 0 1.5rem; }
@@ -308,6 +363,8 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#networks">Networks</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -323,7 +380,7 @@
       <h1>Bishal<br/>Bharadwaj</h1>
       <p class="hero-desc">Applying quantitative approaches to understand why policy effectiveness varies across places — finding no or low-cost strategies for equitable and sustainable societies.</p>
       <div class="btn-group">
-        <a href="mailto:bharadwaj.bishal@ucalgary.ca" class="btn btn-primary">Get in Touch</a>
+        <a href="/cdn-cgi/l/email-protection#1b79737a697a7f6c7a7135797268737a775b6e787a777c7a696235787a" class="btn btn-primary">Get in Touch</a>
         <a href="https://www.bishalbharadwaj.com" target="_blank" class="btn btn-outline">Visit Website</a>
       </div>
     </div>
@@ -600,6 +657,77 @@
 
 <div class="divider"></div>
 
+<!-- IMPACT & ENGAGEMENT -->
+<section id="impact">
+  <div class="section-label">Impact & Engagement</div>
+  <h2>In the Media</h2>
+  <div class="impact-grid">
+
+    <a href="https://www.theguardian.com" target="_blank" class="impact-card">
+      <span class="impact-source source-guardian">The Guardian</span>
+      <h3>Millions of people are burning plastic waste as fuel — with severe health risks</h3>
+      <p>Coverage of the Nature Communications study revealing the scale of plastic burning as household fuel in low-income communities across the Global South.</p>
+      <span class="impact-link">Read article</span>
+    </a>
+
+    <a href="https://blogs.lse.ac.uk/internationaldevelopment/" target="_blank" class="impact-card">
+      <span class="impact-source source-lse">LSE Blog</span>
+      <h3>Why plastic bag bans work in some places but fail in others</h3>
+      <p>Blog for the LSE International Development department exploring the spatial and institutional conditions that determine whether plastic policy succeeds.</p>
+      <span class="impact-link">Read blog post</span>
+    </a>
+
+    <a href="https://theconversation.com" target="_blank" class="impact-card">
+      <span class="impact-source source-conversation">The Conversation</span>
+      <h3>The hidden fuel crisis: how urban poverty drives plastic burning</h3>
+      <p>Explainer for a general audience on why plastic waste becomes a fuel source for millions of households, and what policy levers can change this.</p>
+      <span class="impact-link">Read article</span>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- NETWORKS & AFFILIATIONS -->
+<section id="networks">
+  <div class="section-label">Networks & Affiliations</div>
+  <h2>Professional Associations</h2>
+  <div class="networks-grid">
+
+    <a href="https://www.sandeeonline.org" target="_blank" class="network-card">
+      <div class="network-acronym">SANDEE</div>
+      <div class="network-name">South Asian Network for Development and Environmental Economics</div>
+      <div class="network-desc">Regional research network advancing environmental and development economics across South Asia, supporting policy-relevant research and capacity building.</div>
+      <div class="network-role">Member Researcher</div>
+    </a>
+
+    <a href="https://www.efdinitiative.org" target="_blank" class="network-card">
+      <div class="network-acronym">EFD</div>
+      <div class="network-name">Environment for Development Initiative</div>
+      <div class="network-desc">Global network of environmental economics research centres supporting evidence-based policy in low- and middle-income countries.</div>
+      <div class="network-role">Affiliated Researcher</div>
+    </a>
+
+    <a href="https://seti.network" target="_blank" class="network-card">
+      <div class="network-acronym">SETI</div>
+      <div class="network-name">Sustainable Energy Transitions Initiative</div>
+      <div class="network-desc">International research collaboration focused on equitable and sustainable energy transitions in the Global South. Co-lead, Waste & Energy Nexus subgroup.</div>
+      <div class="network-role">Co-lead — Waste & Energy Nexus Subgroup</div>
+    </a>
+
+    <a href="https://energy-transition.curtin.edu.au" target="_blank" class="network-card">
+      <div class="network-acronym">CEIT</div>
+      <div class="network-name">Curtin Institute for Energy Transition</div>
+      <div class="network-desc">Interdisciplinary research institute at Curtin University, Perth, advancing knowledge on clean energy transitions, policy, and social acceptance.</div>
+      <div class="network-role">Adjunct Research Fellow</div>
+    </a>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-label">Contact</div>
@@ -618,7 +746,7 @@
         <div class="contact-icon">📧</div>
         <div class="contact-info">
           <div class="label">Email</div>
-          <div class="value"><a href="mailto:bharadwaj.bishal@ucalgary.ca">bharadwaj.bishal@ucalgary.ca</a></div>
+          <div class="value"><a href="/cdn-cgi/l/email-protection#73111b120112170412195d111a001b121f330610121f1412010a5d1012"><span class="__cf_email__" data-cfemail="6f0d070e1d0e0b180e05410d061c070e032f1a0c0e03080e1d16410c0e">[email&#160;protected]</span></a></div>
         </div>
       </div>
       <div class="contact-item">
@@ -648,18 +776,5 @@
         <a href="https://www.bishalbharadwaj.com" target="_blank" class="social-link">
           <span>🌐</span> Personal Website
         </a>
-        <a href="mailto:bharadwaj.bishal@ucalgary.ca" class="social-link">
-          <span>📬</span> Send an Email
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Bishal Bharadwaj · Research Associate, University of Calgary</p>
-  <p style="margin-top:0.4rem;">Built with GitHub Pages</p>
-</footer>
-
-</body>
-</html>
+        <a href="/cdn-cgi/l/email-protection#781a10190a191c0f1912561a110b101914380d1b19141f190a01561b19" class="social-link">
+          <span>📬
