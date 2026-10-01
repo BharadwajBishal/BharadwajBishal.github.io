@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bishal Bharadwaj — Human Geographer & Researcher</title>
+  <title>Bishal Bharadwaj — Researcher in Environment, Energy &amp; Development</title>
+  <meta name="description" content="Bishal Bharadwaj is a researcher at the University of Calgary studying environmental policy, energy access, plastic waste, and sustainability transitions."/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -110,7 +111,14 @@
     .hero-visual {
       display: flex; flex-direction: column; gap: 1rem;
     }
-    .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .hero-summary { display: grid; grid-template-columns: minmax(125px, 0.8fr) minmax(220px, 1.2fr); gap: 1rem; align-items: stretch; }
+    .stat-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    .hero-experience { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent3); border-radius: 8px; padding: 1.25rem; }
+    .hero-experience h3 { font-size: 0.82rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; font-family: var(--mono); }
+    .hero-experience .award-list { gap: 0.55rem; }
+    .hero-experience .award-item { padding: 0.55rem 0.7rem; font-size: 0.72rem; }
+    .hero-experience .award-item strong { font-size: 0.74rem; }
+    .hero-experience .award-item span { font-size: 0.7rem; line-height: 1.45; display: block; }
     .stat-card {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -125,7 +133,10 @@
       line-height: 1;
       margin-bottom: 0.25rem;
     }
-    .stat-card .label { font-size: 0.78rem; color: var(--muted); }
+    .stat-card .label { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+    .stat-card .label strong { color: var(--text); }
+    .experience-list { list-style: none; margin-top: 0.45rem; }
+    .experience-list li + li { margin-top: 0.4rem; }
     .location-badge {
       display: inline-flex; align-items: center; gap: 0.4rem;
       background: var(--surface);
@@ -246,19 +257,16 @@
     .impact-subheading { font-size: 1rem; margin: 0 0 1rem; }
 
 
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
-    .skill-group h3 { font-size: 0.85rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-family: var(--mono); }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-tag {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      padding: 0.3rem 0.75rem;
-      font-size: 0.8rem;
-      color: var(--text);
-      font-family: var(--mono);
-    }
+    /* SKILLS & EXPERIENCE */
+    .skill-evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .skill-evidence-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.35rem 1.5rem; }
+    .skill-evidence-card h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.55rem; }
+    .skill-evidence-card p { color: var(--muted); font-size: 0.82rem; margin-bottom: 0.8rem; }
+    .skill-evidence-links { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-evidence-links a { display: inline-block; border: 1px solid var(--border); border-radius: 4px; padding: 0.25rem 0.6rem; color: var(--accent2); font-size: 0.74rem; text-decoration: none; }
+    .skill-evidence-links a:hover, .skill-evidence-links a:focus-visible { border-color: var(--accent2); text-decoration: underline; }
+    .skill-methods { margin-top: 1.5rem; color: var(--muted); font-size: 0.8rem; }
+    .skill-methods strong { color: var(--text); }
 
     /* CONTACT */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -307,9 +315,9 @@
       .hamburger { display: flex; }
       .hero { padding: 7rem 1.5rem 3rem; }
       .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-summary { grid-template-columns: 1fr; }
       section { padding: 3rem 1.5rem; }
-      .about-grid, .research-areas, .contact-grid, .impact-grid, .media-grid { grid-template-columns: 1fr; }
-      .skills-grid { grid-template-columns: 1fr; }
+      .about-grid, .research-areas, .contact-grid, .impact-grid, .media-grid, .skill-evidence-grid { grid-template-columns: 1fr; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .divider { margin: 0 1.5rem; }
     }
@@ -324,7 +332,8 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#impact">Impact &amp; Media</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#impact">Impact &amp; Engagement</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -336,40 +345,53 @@
 <div class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-tag">Human Geographer & Researcher</div>
+      <div class="hero-tag">Researcher · Environment, Energy &amp; Development</div>
       <h1>Bishal<br/>Bharadwaj</h1>
-      <p class="hero-desc">Applying quantitative approaches to understand why policy effectiveness varies across places — finding no or low-cost strategies for equitable and sustainable societies.</p>
+      <p class="hero-desc">I study how environmental and energy policies work across different places, and how to make transitions more effective and equitable.</p>
       <div class="btn-group">
         <a href="mailto:bharadwaj.bishal@ucalgary.ca" class="btn btn-primary">Get in Touch</a>
-        <a href="https://www.bishalbharadwaj.com" target="_blank" class="btn btn-outline">Visit Website</a>
+        <a href="#publications" class="btn btn-outline">Selected Publications</a>
       </div>
     </div>
     <div class="hero-visual">
       <div class="location-badge">
         <span class="dot"></span>
-        Calgary, Canada · University of Calgary
+        Calgary, Alberta, Canada · University of Calgary
       </div>
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="num">31+</div>
-          <div class="label">Peer-reviewed publications</div>
+      <div class="hero-summary">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="num">31+</div>
+            <div class="label">Peer-reviewed publications</div>
+          </div>
+          <div class="stat-card">
+            <div class="num">35+</div>
+            <div class="label">Countries collaborated</div>
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="num">35+</div>
-          <div class="label">Countries collaborated</div>
-        </div>
-        <div class="stat-card">
-          <div class="num">20+</div>
-          <div class="label">Years experience</div>
-        </div>
-        <div class="stat-card">
-          <div class="num">4</div>
-          <div class="label">Degrees incl. PhD</div>
+        <div class="hero-experience">
+          <h3>Experience</h3>
+          <div class="award-list">
+            <div class="award-item">
+              <strong>5+ years · Government policy</strong>
+              <span>Government of Nepal (2010–2018)</span>
+            </div>
+            <div class="award-item">
+              <strong>5 years · Research in Canada and Australia</strong>
+              <span>Research roles across both countries (2021–2026)</span>
+            </div>
+            <div class="award-item">
+              <strong>Civil society &amp; development engagement</strong>
+              <span>Research and policy networks, including EfD, SANDEE, and ICIMOD</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="divider"></div>
 
 <div class="divider"></div>
 
@@ -379,10 +401,10 @@
   <h2>Background</h2>
   <div class="about-grid">
     <div class="about-text">
-      <p>I am a Research Associate at the University of Calgary and Adjunct Research Fellow at the Curtin Institute for Energy Transition, Australia. My work sits at the intersection of environmental policy, energy access, and sustainable development.</p>
-      <p>My research focuses on plastic waste management, clean energy transitions, and how spatial and socioeconomic factors shape policy outcomes in the Global South. I have led large-scale surveys across 26+ countries and collaborated with 40+ research partners worldwide.</p>
-      <p>My work has been featured in <em>Nature Communications</em>, <em>Nature Cities</em>, <em>The Guardian</em>, and <em>The Times of India</em>, reflecting both academic and policy impact.</p>
-      <p>I hold a PhD in Human Geography from the University of Queensland, an MSc in Climate Change from UCL London, an MSc in Natural Resource Management, and a BSc in Environmental Science from Tribhuvan University, Nepal.</p>
+      <p>I am a Research Associate in the Global Research Initiative for Sustainable Low-Carbon Unconventional Resources at the University of Calgary, and an Adjunct Research Fellow at Curtin Institute for Energy Transition in Australia. My work connects environmental policy, energy access, and sustainable development.</p>
+      <p>I study plastic waste and household energy, clean-energy transitions, and how place and socioeconomic conditions shape policy outcomes. I led a multi-country study of plastic burning as household fuel and have worked with more than 40 research partners.</p>
+      <p>My research has appeared in <em>Nature Communications</em>, <em>Nature Cities</em>, <em>Energy Research &amp; Social Science</em>, and <em>Cell Reports Sustainability</em>. It has also been covered by outlets including <em>The Guardian</em>, <em>The Times of India</em>, and <em>Mongabay</em>.</p>
+      <p>I hold a PhD in Human Geography from the University of Queensland; an MSc in Climate Change from University College London; an MSc in Natural Resource Management and a BSc in Environmental Science from Tribhuvan University, Nepal.</p>
     </div>
     <div>
       <h3 style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;font-family:var(--mono);">Awards & Honors</h3>
@@ -427,23 +449,23 @@
     </div>
     <div class="research-area">
       <div class="area-icon">🌍</div>
-      <h3>Environmental Economics</h3>
-      <p>Spatial econometrics, discrete choice experiments, and policy evaluation using RDD and instrumental variables.</p>
+      <h3>Policy Evaluation</h3>
+      <p>Quantitative and mixed-methods evaluation of environmental and energy policies, including causal inference and discrete choice experiments.</p>
     </div>
     <div class="research-area">
       <div class="area-icon">🏙️</div>
-      <h3>Urban Sustainability</h3>
-      <p>Municipal solid waste financing, urban energy poverty, and climate-resilient city planning in developing countries.</p>
+      <h3>Urban Environment &amp; Energy</h3>
+      <p>Urban waste, household energy poverty, thermal comfort, and the spatial distribution of environmental risks.</p>
     </div>
     <div class="research-area">
       <div class="area-icon">🏔️</div>
-      <h3>Himalayan Studies</h3>
-      <p>Ecotourism and energy access, traditional knowledge systems, and conservation policy in Nepal and the Himalayas.</p>
+      <h3>Himalayan Development</h3>
+      <p>Energy access, ecotourism, traditional knowledge, and sustainable development in Nepal and the Himalayas.</p>
     </div>
     <div class="research-area">
       <div class="area-icon">🌐</div>
-      <h3>Global South Development</h3>
-      <p>Social license, policy effectiveness across geographies, and capacity building with 40+ collaborators in 35+ countries.</p>
+      <h3>Public Preferences &amp; Social Acceptance</h3>
+      <p>How public views of low-carbon technologies and policies vary across social, economic, and geographic contexts.</p>
     </div>
   </div>
 </section>
@@ -454,81 +476,27 @@
 <section id="publications">
   <div class="section-label">Publications</div>
   <h2>Selected Publications</h2>
+  <p class="impact-intro">Selected peer-reviewed articles and a book chapter. Select a title to open its DOI record.</p>
   <div class="pub-list">
-    <div class="pub-item">
-      <div class="pub-year">2026</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1038/s41467-025-67512-y" target="_blank" rel="noopener noreferrer">Prevalence of plastic waste as a household fuel in low-income communities of the Global South</a></div>
-        <div class="pub-journal">Nature Communications, 17(1)</div>
-        <span class="pub-badge">Nature</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2026</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1016/j.erss.2026.104547" target="_blank" rel="noopener noreferrer">From waste to fuel: Uncovering the drivers of garbage and plastic burning in Northwest Nigeria</a></div>
-        <div class="pub-journal">Energy Research &amp; Social Science, 132</div>
-        <span class="pub-badge blue">Energy</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2026</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1016/j.ijggc.2026.104797" target="_blank" rel="noopener noreferrer">Assessing readiness for CC(U)S: are we there yet?</a></div>
-        <div class="pub-journal">International Journal of Greenhouse Gas Control, 156, 104797</div>
-        <span class="pub-badge blue">CCUS</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2026</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1016/j.crsus.2026.100708" target="_blank" rel="noopener noreferrer">Investigating the merits of co-locating renewable energy with steel production to decarbonize the iron industry</a></div>
-        <div class="pub-journal">Cell Reports Sustainability, 100708</div>
-        <span class="pub-badge blue">Sustainability</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2025</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1038/s44284-025-00201-5" target="_blank" rel="noopener noreferrer">The use of plastic as a household fuel among the urban poor in the Global South</a></div>
-        <div class="pub-journal">Nature Cities</div>
-        <span class="pub-badge">Nature</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2025</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1016/j.oneear.2025.101310" target="_blank" rel="noopener noreferrer">The Global Plastic Treaty odyssey</a></div>
-        <div class="pub-journal">One Earth, 8(5) — Cell Press Voices</div>
-        <span class="pub-badge blue">Policy</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2024</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1016/j.ijhydene.2024.02.024" target="_blank" rel="noopener noreferrer">Shorter message, stronger framing increases societal acceptance for hydrogen</a></div>
-        <div class="pub-journal">International Journal of Hydrogen Energy, 59</div>
-        <span class="pub-badge blue">Energy</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2022</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1088/2515-7620/ac9458" target="_blank" rel="noopener noreferrer">Space matters: reducing energy disparity in Nepal through spatially equitable renewable energy subsidies</a></div>
-        <div class="pub-journal">Environmental Research Communications, 4</div>
-        <span class="pub-badge blue">Policy</span>
-      </div>
-    </div>
-    <div class="pub-item">
-      <div class="pub-year">2019</div>
-      <div class="pub-content">
-        <div class="pub-title"><a href="https://doi.org/10.1017/S1355770X19000329" target="_blank" rel="noopener noreferrer">What makes a ban on plastic bags effective? The case of Nepal</a></div>
-        <div class="pub-journal">Environment and Development Economics, 25</div>
-        <span class="pub-badge blue">Policy</span>
-      </div>
-    </div>
+    <div class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1038/s41467-025-67512-y" target="_blank" rel="noopener noreferrer">Prevalence of plastic waste as a household fuel in low-income communities of the Global South</a></div><div class="pub-journal">Nature Communications, 17, 50</div></div></div>
+    <div class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.erss.2026.104547" target="_blank" rel="noopener noreferrer">From waste to fuel: Uncovering the drivers of garbage and plastic burning in Northwest Nigeria</a></div><div class="pub-journal">Energy Research &amp; Social Science, 132, 104547</div></div></div>
+    <div class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.ijggc.2026.104797" target="_blank" rel="noopener noreferrer">Assessing readiness for CC(U)S: are we there yet?</a></div><div class="pub-journal">International Journal of Greenhouse Gas Control, 156, 104797</div></div></div>
+    <div class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.crsus.2026.100708" target="_blank" rel="noopener noreferrer">Investigating the merits of co-locating renewable energy with steel production to decarbonize the iron industry</a></div><div class="pub-journal">Cell Reports Sustainability, 3(6), 100708</div></div></div>
+    <div class="pub-item"><div class="pub-year">2026</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1007/s13563-025-00550-6" target="_blank" rel="noopener noreferrer">Why we need more criticality experts from mineral-producing countries: analysis of the geopolitical provincialization of critical minerals assessments</a></div><div class="pub-journal">Mineral Economics, 39, 207–230</div></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1038/s44284-025-00201-5" target="_blank" rel="noopener noreferrer">The use of plastic as a household fuel among the urban poor in the Global South</a></div><div class="pub-journal">Nature Cities, 2, 283–289</div></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.oneear.2025.101310" target="_blank" rel="noopener noreferrer">The Global Plastic Treaty odyssey</a></div><div class="pub-journal">One Earth, 8(5), 101310 — Voices</div></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.nxener.2025.100410" target="_blank" rel="noopener noreferrer">Burning dung cake as a household fuel: A review</a></div><div class="pub-journal">Next Energy, 9, 100410</div></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.exis.2025.101680" target="_blank" rel="noopener noreferrer">Towards advancing the Global South’s understanding of mineral criticality: implications of the North–South geopolitical confrontations on critical minerals</a></div><div class="pub-journal">The Extractive Industries and Society, 23, 101680</div></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.envdev.2024.101100" target="_blank" rel="noopener noreferrer">Optimal inspection (monitoring) and penalty (fine) for plastic bag ban compliance in Nepal</a></div><div class="pub-journal">Environmental Development, 53, 101100</div></div></div>
+    <div class="pub-item"><div class="pub-year">2025</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.resourpol.2025.105792" target="_blank" rel="noopener noreferrer">Towards global cooperation in securing critical minerals: Game theory analyses of policy discourses from the United States, the European Union, South Africa and Australia</a></div><div class="pub-journal">Resources Policy, 111, 105792</div></div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.ijhydene.2024.02.024" target="_blank" rel="noopener noreferrer">Shorter message, stronger framing increases societal acceptance for hydrogen</a></div><div class="pub-journal">International Journal of Hydrogen Energy, 59, 880–888</div></div></div>
+    <div class="pub-item"><div class="pub-year">2024</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-56858-9_8" target="_blank" rel="noopener noreferrer">Traditional Knowledge Systems in the Himalayas: Why Moving Away from Biomass Cooking Fuel Is So Difficult?</a></div><div class="pub-journal">Book chapter in <em>The Resilience of Traditional Knowledge Systems for a Sustainable Future</em>, pp. 183–192</div></div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.jclepro.2023.138432" target="_blank" rel="noopener noreferrer">Awareness of biogas increases its social acceptance</a></div><div class="pub-journal">Journal of Cleaner Production, 421, 138432</div></div></div>
+    <div class="pub-item"><div class="pub-year">2023</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1016/j.enpol.2023.113576" target="_blank" rel="noopener noreferrer">Low-capacity decentralized electricity systems limit the adoption of electronic appliances in rural Nepal</a></div><div class="pub-journal">Energy Policy, 177, 113576</div></div></div>
+    <div class="pub-item"><div class="pub-year">2022</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1088/2515-7620/ac9458" target="_blank" rel="noopener noreferrer">Space matters: reducing energy disparity in Nepal through spatially equitable renewable energy subsidies</a></div><div class="pub-journal">Environmental Research Communications, 4(10), 101005</div></div></div>
+    <div class="pub-item"><div class="pub-year">2020</div><div class="pub-content"><div class="pub-title"><a href="https://doi.org/10.1017/S1355770X19000329" target="_blank" rel="noopener noreferrer">What makes a ban on plastic bags effective? The case of Nepal</a></div><div class="pub-journal">Environment and Development Economics, 25(2), 95–114 · published online 2019</div></div></div>
   </div>
-  <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--muted);">View full publication list on <a href="https://orcid.org/0000-0003-2283-0948" target="_blank" style="color:var(--accent2);">ORCID</a></p>
+  <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--muted);">View my <a href="https://orcid.org/0000-0003-2283-0948" target="_blank" rel="noopener noreferrer" style="color:var(--accent2);">ORCID profile</a>.</p>
 </section>
 
 <div class="divider"></div>
@@ -538,164 +506,92 @@
   <div class="section-label">Experience</div>
   <h2>Career</h2>
   <div class="timeline">
-    <div class="timeline-item">
-      <div class="timeline-date">2025 – Present</div>
-      <div class="timeline-role">Research Associate</div>
-      <div class="timeline-org">University of Calgary, Canada</div>
-      <div class="timeline-desc">Lead on burning plastic waste as fuel in cities of the Global South. Co-lead, Waste & Energy nexus subgroup, SETI.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2025 – Present</div>
-      <div class="timeline-role">Adjunct Research Fellow</div>
-      <div class="timeline-org">Curtin Institute for Energy Transition, Australia</div>
-      <div class="timeline-desc">Continuing research collaboration on energy transition and plastic waste in the Global South.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2023 – 2024</div>
-      <div class="timeline-role">Research Fellow — Energy and Development Theme Lead</div>
-      <div class="timeline-org">Curtin University, Perth, Australia</div>
-      <div class="timeline-desc">Led global training programs with 16 universities in 16 countries. Led global study on plastic waste as fuel with 35+ country collaborators.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2022 – 2023</div>
-      <div class="timeline-role">Postdoctoral Fellow</div>
-      <div class="timeline-org">University of Queensland, Brisbane, Australia</div>
-      <div class="timeline-desc">Net Zero Australia Project — techno-economic modelling, water demand downscaling, and energy export scenarios.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">July 2021 – April 2023</div>
-      <div class="timeline-role">Researcher — Future Fuels CRC-funded project</div>
-      <div class="timeline-org">University of Queensland, Australia</div>
-      <div class="timeline-desc">Contributed to research on public acceptance of hydrogen and biogas.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2016 – 2018</div>
-      <div class="timeline-role">Under-Secretary (Civil Service)</div>
-      <div class="timeline-org">Ministry of Local Development/Federal Affairs, Government of Nepal</div>
-      <div class="timeline-desc">Managed national social security projects, coordinated digitalisation of civil registry, and contributed to policy drafting.</div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-date">2010 – 2016</div>
-      <div class="timeline-role">Section Officer (Civil Service)</div>
-      <div class="timeline-org">Government of Nepal</div>
-      <div class="timeline-desc">Worked on local development, environmental management, and public policy initiatives.</div>
-    </div>
+    <div class="timeline-item"><div class="timeline-date">January 2025 – Present</div><div class="timeline-role">Research Associate</div><div class="timeline-org">Global Research Initiative for Sustainable Low-Carbon Unconventional Resources, University of Calgary</div><div class="timeline-desc">Research on plastic waste and household energy, e-cooking adoption, and thermal comfort, with contributions to quantitative analysis, survey design, and policy research.</div></div>
+    <div class="timeline-item"><div class="timeline-date">2025 – Present</div><div class="timeline-role">Adjunct Research Fellow</div><div class="timeline-org">Curtin Institute for Energy Transition, Australia</div><div class="timeline-desc">Continuing collaboration on energy transitions and environmental policy.</div></div>
+    <div class="timeline-item"><div class="timeline-date">2023 – 2025</div><div class="timeline-role">Research Fellow — Energy and Development Theme Lead</div><div class="timeline-org">Curtin University, Perth, Australia</div><div class="timeline-desc">Led international training delivered with 16 universities and coordinated research on plastic burning as household fuel with partners across multiple countries.</div></div>
+    <div class="timeline-item"><div class="timeline-date">2022 – 2023</div><div class="timeline-role">Postdoctoral Fellow, Net Zero Australia</div><div class="timeline-org">University of Queensland, Brisbane, Australia</div><div class="timeline-desc">Contributed techno-economic modelling, water-demand downscaling, and analysis of export and domestic production scenarios.</div></div>
+    <div class="timeline-item"><div class="timeline-date">July 2021 – April 2023</div><div class="timeline-role">Researcher — Future Fuels CRC-funded project</div><div class="timeline-org">University of Queensland, Australia</div><div class="timeline-desc">Contributed to research on public acceptance of hydrogen and biogas.</div></div>
+    <div class="timeline-item"><div class="timeline-date">2016 – 2018</div><div class="timeline-role">Under-Secretary, Civil Service</div><div class="timeline-org">Government of Nepal</div><div class="timeline-desc">Worked on the digitisation of national social-security payments and inter-agency coordination, alongside policy and local-development responsibilities.</div></div>
+    <div class="timeline-item"><div class="timeline-date">2010 – 2016</div><div class="timeline-role">Section Officer, Civil Service</div><div class="timeline-org">Government of Nepal</div><div class="timeline-desc">Worked on local development, environmental management, and public policy.</div></div>
   </div>
   <div class="other-engagements">
     <h3>Other Engagements</h3>
     <ul>
       <li><strong>Associate Editor, <em>Environment, Development and Sustainability</em> (Springer)</strong> — 2023–present.</li>
-      <li><strong>Short-Term Consultant, World Bank</strong> — plastic waste management.</li>
-      <li><strong>Consultant Researcher, ICIMOD</strong> — research on environmental policy and development in Nepal.</li>
+      <li><strong>Short-Term Consultant, World Bank.</strong></li>
+      <li><strong>Consultant Researcher, ICIMOD</strong> — 2017–2019.</li>
+      <li><strong>International Associate</strong> with Environment for Development (EfD), South Asian Network for Development and Environmental Economics (SANDEE), and Sustainable Energy Transitions Initiative (SETI).</li>
+      <li><strong>Invited reviewer</strong> for the First-Order Draft of the IPCC Special Report on Climate Change and Cities, 2025.</li>
     </ul>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- SKILLS -->
-<section>
-  <div class="section-label">Skills</div>
-  <h2>Technical Skills</h2>
-  <div class="skills-grid">
-    <div class="skill-group">
-      <h3>Software</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">Stata</span>
-        <span class="skill-tag">R</span>
-        <span class="skill-tag">MATLAB</span>
+<!-- SKILLS & EXPERIENCE -->
+<section id="skills">
+  <div class="section-label">Skills &amp; Experience</div>
+  <h2>Applied Skills &amp; Evidence</h2>
+  <div class="skill-evidence-grid">
+    <article class="skill-evidence-card">
+      <h3>Survey design &amp; preference research</h3>
+      <p>Designed and contributed to more than 10 surveys at local, national, and international scales, including research on regulation, biogas acceptance, and preferences for CC(U)S.</p>
+      <div class="skill-evidence-links">
+        <a href="https://doi.org/10.1017/S1355770X19000329" target="_blank" rel="noopener noreferrer">Plastic bag policy · Nepal</a>
+        <a href="https://doi.org/10.1016/j.jclepro.2023.138432" target="_blank" rel="noopener noreferrer">Biogas acceptance · Australia</a>
+        <a href="https://doi.org/10.1016/j.ijggc.2026.104797" target="_blank" rel="noopener noreferrer">CC(U)S preferences · international</a>
       </div>
-    </div>
-    <div class="skill-group">
-      <h3>Spatial Tools</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">ArcGIS</span>
-        <span class="skill-tag">QGIS</span>
-        <span class="skill-tag">Google Earth Engine</span>
-        <span class="skill-tag">Remote Sensing</span>
+    </article>
+    <article class="skill-evidence-card">
+      <h3>Techno-economic modelling</h3>
+      <p>Experience contributing to energy-system scenarios, technology costs, and analysis of domestic production and export pathways.</p>
+      <div class="skill-evidence-links">
+        <a href="https://www.netzeroaustralia.net.au/wp-content/uploads/2023/04/Net-Zero-Australia-Modelling-Summary-Report.pdf" target="_blank" rel="noopener noreferrer">Net Zero Australia · modelling report</a>
+        <a href="https://doi.org/10.1016/j.crsus.2026.100708" target="_blank" rel="noopener noreferrer">Renewables &amp; steel production</a>
       </div>
-    </div>
-    <div class="skill-group">
-      <h3>Econometrics</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">RDD</span>
-        <span class="skill-tag">Instrumental Variables</span>
-        <span class="skill-tag">DCE</span>
-        <span class="skill-tag">Spatial Econometrics</span>
+    </article>
+    <article class="skill-evidence-card">
+      <h3>Policy evaluation &amp; regulation</h3>
+      <p>Evaluated policy design, implementation, compliance, and distributional outcomes in environmental and energy policy.</p>
+      <div class="skill-evidence-links">
+        <a href="https://doi.org/10.1088/2515-7620/ac9458" target="_blank" rel="noopener noreferrer">Renewable energy subsidies · Nepal</a>
+        <a href="https://doi.org/10.1016/j.envdev.2024.101100" target="_blank" rel="noopener noreferrer">Plastic bag ban enforcement · Nepal</a>
       </div>
-    </div>
-    <div class="skill-group">
-      <h3>Methods</h3>
-      <div class="skill-tags">
-        <span class="skill-tag">Survey Design</span>
-        <span class="skill-tag">Qualtrics</span>
-        <span class="skill-tag">Machine Learning</span>
-        <span class="skill-tag">Techno-economic Modelling</span>
+    </article>
+    <article class="skill-evidence-card">
+      <h3>Quantitative &amp; spatial analysis</h3>
+      <p>Applied quantitative and spatial methods to study energy access, policy effects, and geographic differences in environmental outcomes.</p>
+      <div class="skill-evidence-links">
+        <a href="https://doi.org/10.1016/j.enpol.2023.113576" target="_blank" rel="noopener noreferrer">Electricity access · rural Nepal</a>
+        <a href="https://doi.org/10.1016/j.crsus.2026.100708" target="_blank" rel="noopener noreferrer">Energy &amp; industry decarbonisation</a>
       </div>
-    </div>
+    </article>
   </div>
+  <p class="skill-methods"><strong>Methods &amp; tools:</strong> survey design, discrete choice experiments, mixed methods, causal inference, policy analysis, techno-economic modelling, spatial analysis, R, Stata, Python, ArcGIS Pro, and Google Earth Engine.</p>
 </section>
 
 <div class="divider"></div>
 
-<!-- IMPACT & MEDIA -->
+<!-- IMPACT & ENGAGEMENT -->
 <section id="impact">
   <div class="section-label">Impact &amp; Engagement</div>
-  <h2>Research Beyond Academia</h2>
-  <p class="impact-intro">My research brings evidence on plastic burning, household energy, and environmental policy to wider public and policy conversations. The cross-country findings document a practice that is often overlooked and can help inform locally appropriate responses linking waste services, clean energy access, and public health.</p>
-  <div class="impact-grid">
-    <div class="stat-card">
-      <div class="num">1,018</div>
-      <div class="label">Key informants surveyed for the global plastic-as-fuel study</div>
-    </div>
-    <div class="stat-card">
-      <div class="num">26</div>
-      <div class="label">Countries represented in that study</div>
-    </div>
-  </div>
-  <h3 class="impact-subheading">Media, blogs &amp; public engagement</h3>
+  <h2>Public Engagement &amp; Media Coverage</h2>
+
+  <h3 class="impact-subheading">Writing &amp; public engagement</h3>
   <div class="media-grid">
-    <article class="media-card">
-      <div class="outlet">The Conversation · Public-facing article</div>
-      <h3><a href="https://theconversation.com/households-are-burning-plastic-waste-as-fuel-for-cooking-and-heating-in-slums-the-world-over-250265" target="_blank" rel="noopener noreferrer">Households are burning plastic waste as fuel for cooking and heating in slums the world over</a></h3>
-      <p>Explains how energy poverty, scarce traditional fuels, and limited waste services can lead households to burn plastic, and why solutions need to fit local conditions.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">The Guardian · Research coverage</div>
-      <h3><a href="https://www.theguardian.com/global-development/2026/jan/08/household-burning-of-plastic-waste-in-developing-world-is-hidden-health-threat-study-shows" target="_blank" rel="noopener noreferrer">Household burning of plastic waste in developing world is hidden health threat, study shows</a></h3>
-      <p>Coverage of the 26-country study on plastic waste used as household fuel and the associated environmental and health concerns.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">The Times of India · News coverage</div>
-      <h3><a href="https://timesofindia.indiatimes.com/world/rest-of-world/easy-availability-has-turned-plastic-waste-in-latin-america-asia-africa-and-oceania-into-a-dangerous-household-fuel/articleshow/126966597.cms" target="_blank" rel="noopener noreferrer">Easy availability has turned plastic waste into a dangerous household fuel</a></h3>
-      <p>Coverage of research on household plastic burning across Latin America, Asia, Africa, and Oceania.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">Climate, Gendered · Research coverage</div>
-      <h3><a href="https://www.climategendered.com/burning-this-could-disproportionately-impact-the-health-of-women-and-children-joining-clean-energy-efforts-with-waste-management-could-help/" target="_blank" rel="noopener noreferrer">Burning this could disproportionately impact the health of women and children — joining clean energy efforts with waste management could help</a></h3>
-      <p>Feature on the gendered health risks of household plastic burning and the value of linking clean energy access with better waste management.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">Be Waste Wise webinar · Public engagement</div>
-      <h3><a href="https://wastewise.be/burning-questions-gender-health-and-open-waste-burning-from-households-to-communities/?nocache=1" target="_blank" rel="noopener noreferrer">Burning Questions: Gender, Health, and Open Waste Burning</a></h3>
-      <p>Webinar discussion on the links between energy poverty, waste management, gender, and health, with practical pathways toward inclusive solutions.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">Mongabay · Research coverage</div>
-      <h3><a href="https://news.mongabay.com/2026/02/plastic-household-waste-burned-as-fuel-on-rise-in-global-south-risking-health/" target="_blank" rel="noopener noreferrer">Plastic household waste burned as fuel on rise in Global South, risking health</a></h3>
-      <p>Coverage of the global study documenting household plastic burning across 26 countries and its health and environmental concerns.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">South Asia @ LSE · Research blog</div>
-      <h3><a href="https://blogs.lse.ac.uk/southasia/2024/03/04/clean-cooking-in-heterogeneous-contexts-in-nepal/" target="_blank" rel="noopener noreferrer">Clean Cooking in Heterogeneous Contexts in Nepal</a></h3>
-      <p>Shows how geography, infrastructure, affordability, and local cooking practices shape clean-cooking transitions in Nepal.</p>
-    </article>
-    <article class="media-card">
-      <div class="outlet">Mongabay · Expert interview</div>
-      <h3><a href="https://news.mongabay.com/2025/07/open-burning-of-plastic-is-an-escalating-public-health-threat-say-experts/" target="_blank" rel="noopener noreferrer">Open burning of plastic is an escalating public health threat, say experts</a></h3>
-      <p>Interview on the scale of plastic burning, why households and communities resort to it, and the need for contextual alternatives.</p>
-    </article>
+    <article class="media-card"><div class="outlet">The Conversation · Research article</div><h3><a href="https://theconversation.com/households-are-burning-plastic-waste-as-fuel-for-cooking-and-heating-in-slums-the-world-over-250265" target="_blank" rel="noopener noreferrer">Households are burning plastic waste as fuel for cooking and heating in slums the world over</a></h3><p>An accessible account of how energy poverty and gaps in waste services intersect, and why responses need to reflect local conditions.</p></article>
+    <article class="media-card"><div class="outlet">South Asia @ LSE · Blog</div><h3><a href="https://blogs.lse.ac.uk/southasia/2024/03/04/clean-cooking-in-heterogeneous-contexts-in-nepal/" target="_blank" rel="noopener noreferrer">Clean Cooking in Heterogeneous Contexts in Nepal</a></h3><p>Discusses how geography, affordability, infrastructure, and household context shape clean-cooking transitions in Nepal.</p></article>
+    <article class="media-card"><div class="outlet">SANDEE · Policy brief</div><h3><a href="https://sandeeonline.org/publication_detail_disp.php?pub_id=1094" target="_blank" rel="noopener noreferrer">Plastic Bag Ban in Nepal: Enforcement and Effectiveness</a></h3><p>Policy brief presenting evidence on plastic-bag regulation and the importance of enforcement in Nepal.</p></article>
+    <article class="media-card"><div class="outlet">Be Waste Wise · Webinar</div><h3><a href="https://wastewise.be/burning-questions-gender-health-and-open-waste-burning-from-households-to-communities/?nocache=1" target="_blank" rel="noopener noreferrer">Burning Questions: Gender, Health, and Open Waste Burning — from Households to Communities</a></h3><p>Public discussion of how energy poverty, waste-management gaps, gender, and health intersect, with pathways toward inclusive solutions.</p></article>
+  </div>
+
+  <h3 class="impact-subheading" style="margin-top:2.5rem;">Media coverage &amp; interviews</h3>
+  <div class="media-grid">
+    <article class="media-card"><div class="outlet">The Guardian · Research coverage</div><h3><a href="https://www.theguardian.com/global-development/2026/jan/08/household-burning-of-plastic-waste-in-developing-world-is-hidden-health-threat-study-shows" target="_blank" rel="noopener noreferrer">Household burning of plastic waste in developing world is hidden health threat, study shows</a></h3><p>Coverage of evidence on household plastic burning and its potential health and environmental risks.</p></article>
+    <article class="media-card"><div class="outlet">The Times of India · News coverage</div><h3><a href="https://timesofindia.indiatimes.com/world/rest-of-world/easy-availability-has-turned-plastic-waste-in-latin-america-asia-africa-and-oceania-into-a-dangerous-household-fuel/articleshow/126966597.cms" target="_blank" rel="noopener noreferrer">Easy availability has turned plastic waste in Latin America, Asia, Africa, and Oceania into a dangerous household fuel</a></h3><p>Coverage of household plastic burning across several regions of the Global South.</p></article>
+    <article class="media-card"><div class="outlet">Climate, Gendered · Feature</div><h3><a href="https://www.climategendered.com/burning-this-could-disproportionately-impact-the-health-of-women-and-children-joining-clean-energy-efforts-with-waste-management-could-help/" target="_blank" rel="noopener noreferrer">Burning this could disproportionately impact the health of women and children — joining clean energy efforts with waste management could help</a></h3><p>Feature on gendered exposure to plastic combustion and the need to connect clean-energy efforts with waste management.</p></article>
+    <article class="media-card"><div class="outlet">Mongabay · Research coverage</div><h3><a href="https://news.mongabay.com/2026/02/plastic-household-waste-burned-as-fuel-on-rise-in-global-south-risking-health/" target="_blank" rel="noopener noreferrer">Plastic household waste burned as fuel on rise in Global South, risking health</a></h3><p>Coverage of the global study and the risks and circumstances associated with household plastic burning.</p></article>
+    <article class="media-card"><div class="outlet">Mongabay · Expert interview</div><h3><a href="https://news.mongabay.com/2025/07/open-burning-of-plastic-is-an-escalating-public-health-threat-say-experts/" target="_blank" rel="noopener noreferrer">Open burning of plastic is an escalating public health threat, say experts</a></h3><p>Interview on plastic burning as a growing environmental and public-health concern.</p></article>
   </div>
 </section>
 
@@ -706,59 +602,18 @@
   <div class="section-label">Contact</div>
   <h2>Get in Touch</h2>
   <div class="contact-grid">
-    <div class="contact-card">
-      <h3>Contact Information</h3>
-      <div class="contact-item">
-        <div class="contact-icon">📍</div>
-        <div class="contact-info">
-          <div class="label">Location</div>
-          <div class="value">34/3032 Rundleson Rd, Calgary, Canada</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📧</div>
-        <div class="contact-info">
-          <div class="label">Email</div>
-          <div class="value"><a href="mailto:bharadwaj.bishal@ucalgary.ca">bharadwaj.bishal@ucalgary.ca</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">📞</div>
-        <div class="contact-info">
-          <div class="label">Phone</div>
-          <div class="value">+1 (416) 418 0064</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-icon">🌐</div>
-        <div class="contact-info">
-          <div class="label">Website</div>
-          <div class="value"><a href="https://www.bishalbharadwaj.com" target="_blank">www.bishalbharadwaj.com</a></div>
-        </div>
-      </div>
-    </div>
-    <div class="contact-card">
-      <h3>Academic Profiles</h3>
-      <div class="social-links">
-        <a href="https://orcid.org/0000-0003-2283-0948" target="_blank" class="social-link">
-          <span>🔬</span> ORCID — 0000-0003-2283-0948
-        </a>
-        <a href="https://github.com/bbnepal" target="_blank" class="social-link">
-          <span>💻</span> GitHub — bbnepal
-        </a>
-        <a href="https://www.bishalbharadwaj.com" target="_blank" class="social-link">
-          <span>🌐</span> Personal Website
-        </a>
-        <a href="mailto:bharadwaj.bishal@ucalgary.ca" class="social-link">
-          <span>📬</span> Send an Email
-        </a>
-      </div>
-    </div>
+    <div class="contact-card"><h3>Contact Information</h3><div class="contact-item"><div class="contact-icon">📍</div><div class="contact-info"><div class="label">Location</div><div class="value">Calgary, Alberta, Canada</div></div></div><div class="contact-item"><div class="contact-icon">📧</div><div class="contact-info"><div class="label">Email</div><div class="value"><a href="mailto:bharadwaj.bishal@ucalgary.ca">bharadwaj.bishal@ucalgary.ca</a></div></div></div></div>
+    <div class="contact-card"><h3>Academic Profiles</h3><div class="social-links">
+      <a href="https://orcid.org/0000-0003-2283-0948" target="_blank" rel="noopener noreferrer" class="social-link"><span>🔬</span> ORCID</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=o96uAqAAAAAJ" target="_blank" rel="noopener noreferrer" class="social-link"><span>📚</span> Google Scholar</a>
+      <a href="https://github.com/bbnepal" target="_blank" rel="noopener noreferrer" class="social-link"><span>💻</span> GitHub</a>
+      <a href="mailto:bharadwaj.bishal@ucalgary.ca" class="social-link"><span>📬</span> Email</a>
+    </div></div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Bishal Bharadwaj · Research Associate, University of Calgary</p>
+  <p>© 2026 Bishal Bharadwaj · University of Calgary</p>
   <p style="margin-top:0.4rem;">Built with GitHub Pages</p>
 </footer>
 
