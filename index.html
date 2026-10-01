@@ -202,6 +202,8 @@
     }
     .pub-content { flex: 1; }
     .pub-title { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.25rem; line-height: 1.5; }
+    .pub-title a { color: var(--accent2); text-decoration: underline; text-decoration-color: rgba(45,90,142,0.35); text-underline-offset: 2px; }
+    .pub-title a:hover, .pub-title a:focus-visible { color: var(--accent); text-decoration-color: currentColor; }
     .pub-journal { font-size: 0.8rem; color: var(--muted); font-style: italic; }
     .pub-badge {
       font-size: 0.68rem;
@@ -229,6 +231,20 @@
     .timeline-role { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.1rem; }
     .timeline-org { font-size: 0.85rem; color: var(--accent2); margin-bottom: 0.5rem; }
     .timeline-desc { font-size: 0.83rem; color: var(--muted); }
+    .other-engagements { margin-top: 2rem; padding: 1.25rem 1.5rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; }
+    .other-engagements h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .other-engagements ul { padding-left: 1.2rem; color: var(--muted); font-size: 0.83rem; }
+    .other-engagements li + li { margin-top: 0.35rem; }
+    .impact-intro { color: var(--muted); max-width: 780px; margin: -1rem 0 1.75rem; }
+    .impact-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2.5rem; }
+    .media-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .media-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; }
+    .media-card .outlet { font-family: var(--mono); font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.45rem; }
+    .media-card h3 { font-size: 0.92rem; line-height: 1.45; margin-bottom: 0.5rem; }
+    .media-card h3 a { color: var(--accent2); text-decoration: underline; text-decoration-color: rgba(45,90,142,0.35); text-underline-offset: 2px; }
+    .media-card p { color: var(--muted); font-size: 0.8rem; }
+    .impact-subheading { font-size: 1rem; margin: 0 0 1rem; }
+
 
     /* SKILLS */
     .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
@@ -292,7 +308,7 @@
       .hero { padding: 7rem 1.5rem 3rem; }
       .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
       section { padding: 3rem 1.5rem; }
-      .about-grid, .research-areas, .contact-grid { grid-template-columns: 1fr; }
+      .about-grid, .research-areas, .contact-grid, .impact-grid, .media-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .divider { margin: 0 1.5rem; }
@@ -308,6 +324,7 @@
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#impact">Impact &amp; Media</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
@@ -441,7 +458,7 @@
     <div class="pub-item">
       <div class="pub-year">2026</div>
       <div class="pub-content">
-        <div class="pub-title">Prevalence of plastic waste as a household fuel in low-income communities of the Global South</div>
+        <div class="pub-title"><a href="https://doi.org/10.1038/s41467-025-67512-y" target="_blank" rel="noopener noreferrer">Prevalence of plastic waste as a household fuel in low-income communities of the Global South</a></div>
         <div class="pub-journal">Nature Communications, 17(1)</div>
         <span class="pub-badge">Nature</span>
       </div>
@@ -449,7 +466,7 @@
     <div class="pub-item">
       <div class="pub-year">2026</div>
       <div class="pub-content">
-        <div class="pub-title">From waste to fuel: Uncovering the drivers of garbage and plastic burning in Northwest Nigeria</div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.erss.2026.104547" target="_blank" rel="noopener noreferrer">From waste to fuel: Uncovering the drivers of garbage and plastic burning in Northwest Nigeria</a></div>
         <div class="pub-journal">Energy Research &amp; Social Science, 132</div>
         <span class="pub-badge blue">Energy</span>
       </div>
@@ -473,7 +490,7 @@
     <div class="pub-item">
       <div class="pub-year">2025</div>
       <div class="pub-content">
-        <div class="pub-title">The use of plastic as a household fuel among the urban poor in the Global South</div>
+        <div class="pub-title"><a href="https://doi.org/10.1038/s44284-025-00201-5" target="_blank" rel="noopener noreferrer">The use of plastic as a household fuel among the urban poor in the Global South</a></div>
         <div class="pub-journal">Nature Cities</div>
         <span class="pub-badge">Nature</span>
       </div>
@@ -481,7 +498,7 @@
     <div class="pub-item">
       <div class="pub-year">2025</div>
       <div class="pub-content">
-        <div class="pub-title">The Global Plastic Treaty odyssey</div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.oneear.2025.101310" target="_blank" rel="noopener noreferrer">The Global Plastic Treaty odyssey</a></div>
         <div class="pub-journal">One Earth, 8(5) — Cell Press Voices</div>
         <span class="pub-badge blue">Policy</span>
       </div>
@@ -489,7 +506,7 @@
     <div class="pub-item">
       <div class="pub-year">2024</div>
       <div class="pub-content">
-        <div class="pub-title">Shorter message, stronger framing increases societal acceptance for hydrogen</div>
+        <div class="pub-title"><a href="https://doi.org/10.1016/j.ijhydene.2024.02.024" target="_blank" rel="noopener noreferrer">Shorter message, stronger framing increases societal acceptance for hydrogen</a></div>
         <div class="pub-journal">International Journal of Hydrogen Energy, 59</div>
         <span class="pub-badge blue">Energy</span>
       </div>
@@ -497,7 +514,7 @@
     <div class="pub-item">
       <div class="pub-year">2022</div>
       <div class="pub-content">
-        <div class="pub-title">Space matters: reducing energy disparity in Nepal through spatially equitable renewable energy subsidies</div>
+        <div class="pub-title"><a href="https://doi.org/10.1088/2515-7620/ac9458" target="_blank" rel="noopener noreferrer">Space matters: reducing energy disparity in Nepal through spatially equitable renewable energy subsidies</a></div>
         <div class="pub-journal">Environmental Research Communications, 4</div>
         <span class="pub-badge blue">Policy</span>
       </div>
@@ -505,7 +522,7 @@
     <div class="pub-item">
       <div class="pub-year">2019</div>
       <div class="pub-content">
-        <div class="pub-title">What makes a ban on plastic bags effective? The case of Nepal</div>
+        <div class="pub-title"><a href="https://doi.org/10.1017/S1355770X19000329" target="_blank" rel="noopener noreferrer">What makes a ban on plastic bags effective? The case of Nepal</a></div>
         <div class="pub-journal">Environment and Development Economics, 25</div>
         <span class="pub-badge blue">Policy</span>
       </div>
@@ -540,23 +557,37 @@
       <div class="timeline-desc">Led global training programs with 16 universities in 16 countries. Led global study on plastic waste as fuel with 35+ country collaborators.</div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-date">2022 – 2024</div>
-      <div class="timeline-role">Short-Term Consultant</div>
-      <div class="timeline-org">The World Bank — Plastic Waste Management</div>
-      <div class="timeline-desc">Advisory on plastic waste management policy.</div>
-    </div>
-    <div class="timeline-item">
       <div class="timeline-date">2022 – 2023</div>
       <div class="timeline-role">Postdoctoral Fellow</div>
       <div class="timeline-org">University of Queensland, Brisbane, Australia</div>
       <div class="timeline-desc">Net Zero Australia Project — techno-economic modelling, water demand downscaling, and energy export scenarios.</div>
     </div>
     <div class="timeline-item">
+      <div class="timeline-date">July 2021 – April 2023</div>
+      <div class="timeline-role">Researcher — Future Fuels CRC-funded project</div>
+      <div class="timeline-org">University of Queensland, Australia</div>
+      <div class="timeline-desc">Contributed to research on public acceptance of hydrogen and biogas.</div>
+    </div>
+    <div class="timeline-item">
       <div class="timeline-date">2016 – 2018</div>
       <div class="timeline-role">Under-Secretary (Civil Service)</div>
-      <div class="timeline-org">Ministry of Federal Affairs, Nepal</div>
-      <div class="timeline-desc">Managed national social security projects, coordinated digitalisation of civil registry, member of policy drafting committees.</div>
+      <div class="timeline-org">Ministry of Local Development/Federal Affairs, Government of Nepal</div>
+      <div class="timeline-desc">Managed national social security projects, coordinated digitalisation of civil registry, and contributed to policy drafting.</div>
     </div>
+    <div class="timeline-item">
+      <div class="timeline-date">2010 – 2016</div>
+      <div class="timeline-role">Section Officer (Civil Service)</div>
+      <div class="timeline-org">Government of Nepal</div>
+      <div class="timeline-desc">Worked on local development, environmental management, and public policy initiatives.</div>
+    </div>
+  </div>
+  <div class="other-engagements">
+    <h3>Other Engagements</h3>
+    <ul>
+      <li><strong>Associate Editor, <em>Environment, Development and Sustainability</em> (Springer)</strong> — 2023–present.</li>
+      <li><strong>Short-Term Consultant, World Bank</strong> — plastic waste management.</li>
+      <li><strong>Consultant Researcher, ICIMOD</strong> — research on environmental policy and development in Nepal.</li>
+    </ul>
   </div>
 </section>
 
@@ -603,6 +634,68 @@
         <span class="skill-tag">Techno-economic Modelling</span>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- IMPACT & MEDIA -->
+<section id="impact">
+  <div class="section-label">Impact &amp; Engagement</div>
+  <h2>Research Beyond Academia</h2>
+  <p class="impact-intro">My research brings evidence on plastic burning, household energy, and environmental policy to wider public and policy conversations. The cross-country findings document a practice that is often overlooked and can help inform locally appropriate responses linking waste services, clean energy access, and public health.</p>
+  <div class="impact-grid">
+    <div class="stat-card">
+      <div class="num">1,018</div>
+      <div class="label">Key informants surveyed for the global plastic-as-fuel study</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">26</div>
+      <div class="label">Countries represented in that study</div>
+    </div>
+  </div>
+  <h3 class="impact-subheading">Media, blogs &amp; public engagement</h3>
+  <div class="media-grid">
+    <article class="media-card">
+      <div class="outlet">The Conversation · Public-facing article</div>
+      <h3><a href="https://theconversation.com/households-are-burning-plastic-waste-as-fuel-for-cooking-and-heating-in-slums-the-world-over-250265" target="_blank" rel="noopener noreferrer">Households are burning plastic waste as fuel for cooking and heating in slums the world over</a></h3>
+      <p>Explains how energy poverty, scarce traditional fuels, and limited waste services can lead households to burn plastic, and why solutions need to fit local conditions.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">The Guardian · Research coverage</div>
+      <h3><a href="https://www.theguardian.com/global-development/2026/jan/08/household-burning-of-plastic-waste-in-developing-world-is-hidden-health-threat-study-shows" target="_blank" rel="noopener noreferrer">Household burning of plastic waste in developing world is hidden health threat, study shows</a></h3>
+      <p>Coverage of the 26-country study on plastic waste used as household fuel and the associated environmental and health concerns.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">The Times of India · News coverage</div>
+      <h3><a href="https://timesofindia.indiatimes.com/world/rest-of-world/easy-availability-has-turned-plastic-waste-in-latin-america-asia-africa-and-oceania-into-a-dangerous-household-fuel/articleshow/126966597.cms" target="_blank" rel="noopener noreferrer">Easy availability has turned plastic waste into a dangerous household fuel</a></h3>
+      <p>Coverage of research on household plastic burning across Latin America, Asia, Africa, and Oceania.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">Climate, Gendered · Research coverage</div>
+      <h3><a href="https://www.climategendered.com/burning-this-could-disproportionately-impact-the-health-of-women-and-children-joining-clean-energy-efforts-with-waste-management-could-help/" target="_blank" rel="noopener noreferrer">Burning this could disproportionately impact the health of women and children — joining clean energy efforts with waste management could help</a></h3>
+      <p>Feature on the gendered health risks of household plastic burning and the value of linking clean energy access with better waste management.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">Be Waste Wise webinar · Public engagement</div>
+      <h3><a href="https://wastewise.be/burning-questions-gender-health-and-open-waste-burning-from-households-to-communities/?nocache=1" target="_blank" rel="noopener noreferrer">Burning Questions: Gender, Health, and Open Waste Burning</a></h3>
+      <p>Webinar discussion on the links between energy poverty, waste management, gender, and health, with practical pathways toward inclusive solutions.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">Mongabay · Research coverage</div>
+      <h3><a href="https://news.mongabay.com/2026/02/plastic-household-waste-burned-as-fuel-on-rise-in-global-south-risking-health/" target="_blank" rel="noopener noreferrer">Plastic household waste burned as fuel on rise in Global South, risking health</a></h3>
+      <p>Coverage of the global study documenting household plastic burning across 26 countries and its health and environmental concerns.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">South Asia @ LSE · Research blog</div>
+      <h3><a href="https://blogs.lse.ac.uk/southasia/2024/03/04/clean-cooking-in-heterogeneous-contexts-in-nepal/" target="_blank" rel="noopener noreferrer">Clean Cooking in Heterogeneous Contexts in Nepal</a></h3>
+      <p>Shows how geography, infrastructure, affordability, and local cooking practices shape clean-cooking transitions in Nepal.</p>
+    </article>
+    <article class="media-card">
+      <div class="outlet">Mongabay · Expert interview</div>
+      <h3><a href="https://news.mongabay.com/2025/07/open-burning-of-plastic-is-an-escalating-public-health-threat-say-experts/" target="_blank" rel="noopener noreferrer">Open burning of plastic is an escalating public health threat, say experts</a></h3>
+      <p>Interview on the scale of plastic burning, why households and communities resort to it, and the need for contextual alternatives.</p>
+    </article>
   </div>
 </section>
 
