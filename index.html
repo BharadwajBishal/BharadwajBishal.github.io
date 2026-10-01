@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bishal Bharadwaj — Human geographer with research interest in sustainable socities </title>
+  <title>Bishal Bharadwaj — Researcher in Environment, Energy &amp; Development</title>
   <meta name="description" content="Bishal Bharadwaj is a researcher at the University of Calgary studying environmental policy, energy access, plastic waste, and sustainability transitions."/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <style>
@@ -60,9 +60,9 @@
 
     /* HERO */
     .hero {
-      min-height: 100vh;
+      min-height: auto;
       display: flex; align-items: center;
-      padding: 8rem 3rem 5rem;
+      padding: 7.5rem 3rem 1.5rem;
       max-width: 1100px;
       margin: 0 auto;
     }
@@ -165,6 +165,7 @@
     .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 3rem; }
 
     /* ABOUT */
+    #about { padding-top: 2.75rem; }
     .about-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; align-items: start; }
     .about-text p { color: var(--muted); margin-bottom: 1rem; font-weight: 300; }
     .award-list { display: flex; flex-direction: column; gap: 0.75rem; }
@@ -179,19 +180,21 @@
     .award-item strong { display: block; color: var(--text); font-size: 0.82rem; margin-bottom: 0.1rem; }
     .award-item span { color: var(--muted); }
 
-    /* RESEARCH */
-    .research-areas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 3rem; }
-    .research-area {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .research-area:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
-    .area-icon { font-size: 1.5rem; margin-bottom: 0.75rem; }
-    .research-area h3 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .research-area p { font-size: 0.82rem; color: var(--muted); }
+    /* RESEARCH THEMES */
+    .research-theme-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+    .research-theme { background: #f1efe9; border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .research-theme-heading { display: flex; align-items: baseline; gap: 0.65rem; margin: 0 0 1rem; }
+    .research-theme-heading .theme-number { color: var(--accent); font: 700 0.68rem var(--mono); letter-spacing: 0.12em; text-transform: uppercase; }
+    .research-theme-heading h3 { font-size: 1.12rem; font-weight: 700; letter-spacing: -0.01em; }
+    .research-subtopics { display: grid; grid-template-columns: 1fr; gap: 0.85rem; }
+    .research-area { background: var(--surface); border: 1px solid var(--border); border-radius: 9px; padding: 1.2rem; transition: transform 0.2s, box-shadow 0.2s; }
+    .research-area:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.07); }
+    .area-icon { width: 2.7rem; height: 2.7rem; display: grid; place-items: center; border-radius: 10px; background: #e8f5ef; font-size: 1.45rem; margin-bottom: 0.8rem; }
+    .research-area h4 { font-size: 0.94rem; font-weight: 600; margin-bottom: 0.45rem; }
+    .research-area p { font-size: 0.8rem; color: var(--muted); line-height: 1.65; }
+    .research-links { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
+    .research-links a { color: var(--accent2); border: 1px solid rgba(45,90,142,0.2); background: #f7f9fc; border-radius: 4px; padding: 0.25rem 0.5rem; font-size: 0.69rem; line-height: 1.4; text-decoration: none; }
+    .research-links a:hover, .research-links a:focus-visible { text-decoration: underline; border-color: var(--accent2); }
 
     /* PUBLICATIONS */
     .pub-list { display: flex; flex-direction: column; gap: 1rem; }
@@ -257,6 +260,13 @@
     .impact-subheading { font-size: 1rem; margin: 0 0 1rem; }
 
 
+    /* EDUCATION */
+    .education-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+    .education-item { display: flex; gap: 1rem; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 6px; padding: 1rem 1.25rem; }
+    .education-year { min-width: 3.5rem; color: var(--accent); font-family: var(--mono); font-size: 0.78rem; padding-top: 0.1rem; }
+    .education-item h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
+    .education-item p { color: var(--muted); font-size: 0.8rem; }
+
     /* SKILLS & EXPERIENCE */
     .skill-evidence-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
     .skill-evidence-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.35rem 1.5rem; }
@@ -317,7 +327,7 @@
       .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
       .hero-summary { grid-template-columns: 1fr; }
       section { padding: 3rem 1.5rem; }
-      .about-grid, .research-areas, .contact-grid, .impact-grid, .media-grid, .skill-evidence-grid { grid-template-columns: 1fr; }
+      .about-grid, .research-theme-grid, .contact-grid, .impact-grid, .media-grid, .skill-evidence-grid, .education-list { grid-template-columns: 1fr; }
       .stat-grid { grid-template-columns: 1fr 1fr; }
       .divider { margin: 0 1.5rem; }
     }
@@ -329,6 +339,7 @@
   <a href="#" class="nav-logo">BB_</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -393,8 +404,6 @@
 
 <div class="divider"></div>
 
-<div class="divider"></div>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="section-label">About</div>
@@ -404,7 +413,6 @@
       <p>I am a Research Associate in the Global Research Initiative for Sustainable Low-Carbon Unconventional Resources at the University of Calgary, and an Adjunct Research Fellow at Curtin Institute for Energy Transition in Australia. My work connects environmental policy, energy access, and sustainable development.</p>
       <p>I study plastic waste and household energy, clean-energy transitions, and how place and socioeconomic conditions shape policy outcomes. I led a multi-country study of plastic burning as household fuel and have worked with more than 40 research partners.</p>
       <p>My research has appeared in <em>Nature Communications</em>, <em>Nature Cities</em>, <em>Energy Research &amp; Social Science</em>, and <em>Cell Reports Sustainability</em>. It has also been covered by outlets including <em>The Guardian</em>, <em>The Times of India</em>, and <em>Mongabay</em>.</p>
-      <p>I hold a PhD in Human Geography from the University of Queensland; an MSc in Climate Change from University College London; an MSc in Natural Resource Management and a BSc in Environmental Science from Tribhuvan University, Nepal.</p>
     </div>
     <div>
       <h3 style="font-size:0.85rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1rem;font-family:var(--mono);">Awards & Honors</h3>
@@ -432,40 +440,85 @@
 
 <div class="divider"></div>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label">Education</div>
+  <h2>Degrees</h2>
+  <div class="education-list">
+    <article class="education-item">
+      <div class="education-year">2022</div>
+      <div><h3>PhD in Human Geography</h3><p>University of Queensland, Australia</p></div>
+    </article>
+    <article class="education-item">
+      <div class="education-year">2016</div>
+      <div><h3>MSc in Climate Change</h3><p>University College London, United Kingdom</p></div>
+    </article>
+    <article class="education-item">
+      <div class="education-year">2009</div>
+      <div><h3>MSc in NRDRD</h3><p>Institute of Forestry, Tribhuvan University, Nepal</p></div>
+    </article>
+    <article class="education-item">
+      <div class="education-year">2006</div>
+      <div><h3>BSc in Environmental Science</h3><p>Tribhuvan University, Nepal</p></div>
+    </article>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- RESEARCH -->
 <section id="research">
   <div class="section-label">Research</div>
-  <h2>Research Areas</h2>
-  <div class="research-areas">
-    <div class="research-area">
-      <div class="area-icon">♻️</div>
-      <h3>Plastic Waste & Policy</h3>
-      <p>Evaluating plastic bag bans, burning behaviour, and waste management policy across South Asia and the Global South.</p>
+  <h2>Research Themes</h2>
+  <div class="research-theme-grid">
+    <div class="research-theme">
+      <div class="research-theme-heading"><span class="theme-number">Theme 01</span><h3>Urban Sustainability</h3></div>
+      <div class="research-subtopics">
+        <article class="research-area">
+          <div class="area-icon" aria-hidden="true">♻️</div>
+          <h4>Plastic Pollution in Cities</h4>
+          <p>I examine how waste services, household energy needs, and policy shape plastic use, disposal, and burning in urban areas. My work includes research on plastic burning across low-income communities, plastic-bag policy in Nepal, and reusable-cup use in Pakistan.</p>
+          <div class="research-links">
+            <a href="https://doi.org/10.1038/s41467-025-67512-y" target="_blank" rel="noopener noreferrer">Plastic as household fuel · global study</a>
+            <a href="https://doi.org/10.1017/S1355770X19000329" target="_blank" rel="noopener noreferrer">Plastic bag ban · Nepal</a>
+            <a href="https://doi.org/10.1007/s43621-025-01616-9" target="_blank" rel="noopener noreferrer">Reusable cups · Pakistan</a>
+          </div>
+        </article>
+        <article class="research-area">
+          <div class="area-icon" aria-hidden="true">🌡️</div>
+          <h4>Cities and Climate Change</h4>
+          <p>I study how climate and environmental pressures affect cities and their residents. Current work examines how summer thermal comfort in Canada varies across socioeconomic groups, and how plastic accumulation around urban landfills may contribute to risks such as landfill fires.</p>
+          <div class="research-links">
+            <a href="https://doi.org/10.1007/978-981-16-0680-9_21" target="_blank" rel="noopener noreferrer">Urban waste and drainage · Nepal</a>
+            <a href="https://doi.org/10.1038/s44284-025-00201-5" target="_blank" rel="noopener noreferrer">Urban poor and household fuel · Nature Cities</a>
+          </div>
+        </article>
+      </div>
     </div>
-    <div class="research-area">
-      <div class="area-icon">⚡</div>
-      <h3>Energy Access & Transition</h3>
-      <p>Clean cooking, renewable energy subsidies, household fuel choice, and social acceptance of hydrogen and biogas.</p>
-    </div>
-    <div class="research-area">
-      <div class="area-icon">🌍</div>
-      <h3>Policy Evaluation</h3>
-      <p>Quantitative and mixed-methods evaluation of environmental and energy policies, including causal inference and discrete choice experiments.</p>
-    </div>
-    <div class="research-area">
-      <div class="area-icon">🏙️</div>
-      <h3>Urban Environment &amp; Energy</h3>
-      <p>Urban waste, household energy poverty, thermal comfort, and the spatial distribution of environmental risks.</p>
-    </div>
-    <div class="research-area">
-      <div class="area-icon">🏔️</div>
-      <h3>Himalayan Development</h3>
-      <p>Energy access, ecotourism, traditional knowledge, and sustainable development in Nepal and the Himalayas.</p>
-    </div>
-    <div class="research-area">
-      <div class="area-icon">🌐</div>
-      <h3>Public Preferences &amp; Social Acceptance</h3>
-      <p>How public views of low-carbon technologies and policies vary across social, economic, and geographic contexts.</p>
+    <div class="research-theme">
+      <div class="research-theme-heading"><span class="theme-number">Theme 02</span><h3>Sustainability-Oriented Technologies</h3></div>
+      <div class="research-subtopics">
+        <article class="research-area">
+          <div class="area-icon" aria-hidden="true">⚡</div>
+          <h4>Sustainable Energy Transitions</h4>
+          <p>I investigate how technology choices and policy shape energy access, emissions, and distributional outcomes—from household energy and renewable-energy support to low-carbon industrial systems.</p>
+          <div class="research-links">
+            <a href="https://doi.org/10.1016/j.crsus.2026.100708" target="_blank" rel="noopener noreferrer">Renewables and steel production</a>
+            <a href="https://doi.org/10.1088/2515-7620/ac9458" target="_blank" rel="noopener noreferrer">Renewable-energy subsidies · Nepal</a>
+            <a href="https://www.netzeroaustralia.net.au/wp-content/uploads/2023/04/Net-Zero-Australia-Modelling-Summary-Report.pdf" target="_blank" rel="noopener noreferrer">Net Zero Australia modelling</a>
+          </div>
+        </article>
+        <article class="research-area">
+          <div class="area-icon" aria-hidden="true">🗣️</div>
+          <h4>Social Acceptance of SOTs</h4>
+          <p>Using surveys and choice experiments, I examine public views of biogas, hydrogen, and CC(U)S, including how acceptance varies across social and geographic contexts.</p>
+          <div class="research-links">
+            <a href="https://doi.org/10.1016/j.jclepro.2023.138432" target="_blank" rel="noopener noreferrer">Biogas acceptance</a>
+            <a href="https://doi.org/10.1016/j.ijhydene.2024.02.024" target="_blank" rel="noopener noreferrer">Hydrogen acceptance</a>
+            <a href="https://doi.org/10.1016/j.ijggc.2026.104797" target="_blank" rel="noopener noreferrer">CC(U)S preferences</a>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 </section>
